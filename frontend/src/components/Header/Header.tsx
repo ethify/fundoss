@@ -14,8 +14,8 @@ function Header() {
     <div
       className={`header ${location.pathname !== "/" ? "header-with-shadow" : ""}`}
     >
-      <Link to="/" className="header-home-container">
-        <Home />
+      <Link to="/">
+        <img src={require("../../assets/logo.svg")} alt="logo" />
       </Link>
       <div className="header-profile-container">
         {user ? (
