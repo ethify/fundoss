@@ -10,13 +10,14 @@ import "firebase/auth";
 // const FIREBASE_APP_ID = process.env.FIREBASE_APP_ID;
 // const FIREBASE_MEASUREMENT_ID = process.env.FIREBASE_MEASUREMENT_ID;
 
-const FIREBASE_KEY = "AIzaSyCkhlUKdbkaMnorgs4OeQ0-pro93v-rWHo";
-const FIREBASE_AUTH_DOMAIN = "downtownstimulus.firebaseapp.com";
-const FIREBASE_DATABASE_URL = "https://downtownstimulus.firebaseio.com";
-const FIREBASE_PROJECT_ID = "downtownstimulus";
-const FIREBASE_STORAGE_BUCKET = "downtownstimulus.appspot.com";
-const FIREBASE_MESSAGING_SENDER_ID = "993720869238";
-const FIREBASE_APP_ID = "1:993720869238:web:b22cb483737dd5c71dda57";
+const FIREBASE_KEY = "AIzaSyD1FpF0xap2SEgvjXOFg7diTKVcmIkTZQA";
+const FIREBASE_AUTH_DOMAIN = "fundoss.firebaseapp.com";
+const FIREBASE_DATABASE_URL = "https://fundoss.firebaseio.com";
+const FIREBASE_PROJECT_ID = "fundoss";
+const FIREBASE_STORAGE_BUCKET = "fundoss.appspot.com";
+const FIREBASE_MESSAGING_SENDER_ID = "470130762920";
+const FIREBASE_APP_ID = "1:470130762920:web:f804fa85bcb0e6f6cece9d";
+const FIREBASE_MEASUREMENT_ID = "G-FS5FVF488L";
 
 const firebaseConfig = {
   apiKey: FIREBASE_KEY,
@@ -26,16 +27,27 @@ const firebaseConfig = {
   storageBucket: FIREBASE_STORAGE_BUCKET,
   messagingSenderId: FIREBASE_MESSAGING_SENDER_ID,
   appId: FIREBASE_APP_ID,
+  measurementId: FIREBASE_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-export const signInSocial = async (pType: string) => {
-  var provider =
-    pType === "google"
-      ? new firebase.auth.GoogleAuthProvider()
-      : new firebase.auth.FacebookAuthProvider();
+export const signInGithub = async () => {
+  // [START auth_github_provider_create]
+  var provider = new firebase.auth.GithubAuthProvider();
+  // [END auth_github_provider_create]
+
+  // [START auth_github_provider_scopes]
+  provider.addScope("repo");
+  // [END auth_github_provider_scopes]
+
+  // [START auth_github_provider_params]
+  provider.setCustomParameters({
+    allow_signup: "false",
+  });
+  // [END auth_github_provider_params]
+
   firebase.auth().useDeviceLanguage();
   try {
     const result = await firebase.auth().signInWithPopup(provider);
@@ -53,7 +65,7 @@ export const signInSocial = async (pType: string) => {
     // The firebase.auth.AuthCredential type that was used.
     var credential = error.credential;
     // eslint-disable-next-line
-    console.log(errorCode, errorMessage, email, credential)
+    console.log(errorCode, errorMessage, email, credential);
   }
 };
 
