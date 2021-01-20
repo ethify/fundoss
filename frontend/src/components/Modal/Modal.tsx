@@ -3,7 +3,6 @@ import "./Modal.scss";
 import { X } from "react-feather";
 import { ActionContext, StateContext } from "../../hooks";
 import Login from "../Login";
-import SignUp from "../SignUp";
 import PaymentGateway from "../PaymentGateway";
 import Share from "../Share";
 import DonationThank from "../DonationThank";
@@ -41,7 +40,6 @@ function Modal() {
         </button>
         <div className="modal-guts">
           {modalConfig.type === "login" && <Login></Login>}
-          {modalConfig.type === "signUp" && <SignUp></SignUp>}
           {modalConfig.type === "payment" && <PaymentGateway></PaymentGateway>}
           {modalConfig.type === "share" && <Share></Share>}
           {modalConfig.type === "legalInfo" && <LegalInfo></LegalInfo>}
