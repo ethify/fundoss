@@ -1,0 +1,106 @@
+.login {
+  text-align: center;
+  margin: 1.5em;
+  padding: 1.5em;
+
+  .login-header {
+    font-size: 26.9008px;
+  }
+
+  .login-text {
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 23px;
+    text-align: center;
+  }
+
+  .login-input-container {
+    display: flex;
+    flex-direction: column;
+    .login-input-label {
+      color: var(--grey4Color);
+      justify-content: flex-start;
+      display: flex;
+    }
+    .login-input {
+      padding: 0.8em;
+      border: 1px solid var(--grey3Color);
+      border-radius: 4px;
+      margin-top: 4px;
+    }
+  }
+
+  .login-create-link-container {
+    .login-create-link {
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+
+  .login-email-submit-container {
+    .login-email-submit-button {
+      width: 100%;
+      border-radius: 42px;
+      background: var(--primaryColor);
+      color: var(--whiteColor);
+      border: 0;
+      padding: 0.65em;
+      font-size: 16px;
+      font-weight: bold;
+      outline: none;
+      cursor: pointer;
+      &:active {
+        background: darken(#ff8a00, 10);
+      }
+    }
+  }
+}
+
+.login-facebook-button-container {
+  .login-facebook-button {
+    width: 100%;
+    background: #375594;
+    color: var(--whiteColor);
+    border: 1px solid #375594;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 29px;
+    border-radius: 6px;
+    padding: 8px;
+    cursor: pointer;
+    outline: none;
+    &:active {
+      background: darken(#375594, 10);
+    }
+    &:hover {
+      background: darken(#375594, 5);
+    }
+  }
+}
+
+.login-google-button-container {
+  .login-google-button {
+    width: 100%;
+    background: #cf4332;
+    color: var(--whiteColor);
+    border: 1px solid #cf4332;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 29px;
+    border-radius: 6px;
+    padding: 8px;
+    cursor: pointer;
+    outline: none;
+    &:active {
+      background: darken(#cf4332, 10);
+    }
+    &:hover {
+      background: darken(#cf4332, 5);
+    }
+  }
+}
