@@ -35,7 +35,7 @@ function HomeTopBar() {
             <br />
             <br />
             <a
-              href={`https://www.google.com/`}
+              href={`https://wtfisqf.com/?grant=&grant=&grant=&grant=&match=1000`}
               target="_blank"
               rel="noopener noreferrer"
             >
