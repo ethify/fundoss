@@ -35,7 +35,7 @@ function HomeTopBar() {
             <br />
             <br />
             <a
-              href={`https://www.google.com/`}
+              href={`https://www.wtfisqf.com/`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -48,6 +48,16 @@ function HomeTopBar() {
               <img src={require("../../assets/logo_osc.svg")} alt="osc" />
               <img
                 src={require("../../assets/logo_gitcoin.svg")}
+                alt="osc"
+                style={{ paddingLeft: "1.5rem" }}
+              />
+              <img
+                src={require("../../assets/logo_sustain.svg")}
+                alt="osc"
+                style={{ paddingLeft: "1.5rem" }}
+              />
+              <img
+                src={require("../../assets/logo_synth.svg")}
                 alt="osc"
                 style={{ paddingLeft: "1.5rem" }}
               />
